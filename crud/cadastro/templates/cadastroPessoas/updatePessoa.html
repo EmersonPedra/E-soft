@@ -3,21 +3,21 @@
 {% block title %} Editar Registro {% endblock %}
 {% block content %}
 
-<div class="offset=1 col=10 lista-div">
-    
-    <h1>Editar Registro:</h1>
-    
+<div class="list-div">  
     <form method="POST">
         <!--Proteção contra ataques de Cross Site Request Forgery-->
         {% csrf_token %}
         <!--Utilizei o crispy para gerar meu formulario de forma mais facilpois essa parte vai puxar os dados presentes no
         banco de dados para que o usuario possa manipular-->
         {{ form|crispy}}
-        <input type="submit" class="form-control" value="cadastrar">
+         
+        <div class="add-div">
+            <button type="submit" id='adicionar-pessoa' class="form-control">Cadastrar</button>
+        </div>   
     </form>
 
-    <div class ="col=2 add-div">
-        <a href="/listPessoa" class="form-control"><i class="fas fa-user"></i> Ir para lista de Pessoas</a>
+    <div class ="list-btn-div">
+        <a href="/listPessoa"><button class="form-control"><i class="fas fa-user"></i>Ir para lista de Pessoas</button></a>
     </div>          
 
 </div>

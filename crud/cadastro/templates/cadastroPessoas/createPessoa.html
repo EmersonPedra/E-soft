@@ -2,29 +2,29 @@
 {% block title %} Cadastrar Pessoa {% endblock %}
 {% block content %}
 
-<div class="offset=1 col=10 lista-div">
-    
-    <h1>Adicionar Pessoa:</h1>
-
+<div class="list-div">    
     <form method="POST">
         <!--Proteção contra ataques de Cross Site Request Forgery-->
         {% csrf_token %}
         
-        <p>Nome:</p><input type="text" class="form-control" name="nome" value={{nome}}>
-        <p>Sobrenome:</p><input type="text" class="form-control" name="sobrenome" value={{sobrenome}}>
-        <p>Idade:</p><input type="number" class="form-control" name="idade" >
-        <p>Nascimento:</p><input type="date" class="form-control" name="nascimento" >
-        <p>Email:</p><input type="email" class="form-control" name="email" >
+        <p>Nome:</p><input type="text" class="form-control" name="nome" value={{nome}} required="required">
+        <p>Sobrenome:</p><input type="text" id ="sobrenome-input" class="form-control" name="sobrenome" value={{sobrenome}} required="required">
+        <p>Idade:</p><input type="number" class="form-control" name="idade" required="required">
+        <p>Nascimento:</p><input type="date" class="form-control" name="nascimento" required="required">
+        <p>Email:</p><input type="email" class="form-control" name="email" required="required">
         <p>Apelido:</p><input type="text" class="form-control" name="apelido" >
         <p>Observação:</p><input type="text" class="form-control" name="observacao" >
-
-        <input type="submit" class="form-control" value="Adicionar Pessoa">
+        
+        <div class="add-div">
+            <button type="submit" id='adicionar-pessoa' class="form-control">Cadastrar</button>
+        </div>
+        
 
     </form>    
     
-    <div class ="col=2 add-div">
-        <a href="./listPessoa" class="form-control"><i class="fas fa-user"></i> Ir para lista de Pessoas</a>
-    </div>   
+    <div class="list-btn-div">
+        <a href="/listPessoa"><button class="form-control"><i class="fas fa-user"></i>Lista de pessoas</button ></a>
+    </div>
     
 </div>
 

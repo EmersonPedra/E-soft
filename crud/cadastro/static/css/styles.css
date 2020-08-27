@@ -1,39 +1,69 @@
-
 .container-fluid {
 
     padding: 0;
 }
 
+table{
+    margin: auto;
+    text-align: justify;
+    background-color: #f0f0f0;
+}
+
 a{
 
     text-decoration: none;
+    color: #000000;
 
 }
 
 h1{
-    color: #3476e2;
-    margin-top: 20px;
+    color: #f0f0f0;
+    margin-top: 10px;
     text-align: center;
+    font-size: 30px;
+    font-weight: lighter;
 
+}
+
+/*Barra de Navegação*/
+
+.nav-bar{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin:auto;
+    background-color: #3476e2;
+
+}
+.nav-bar div{
+    display: inline-block;
+    padding-left: 10px;
+    
+}
+.nav-bar .company-name{
+    display: block;
+    float: left;
+    padding-left: 10%;
+   
 }
 
 /*BARRA DE PESQUISA*/
 
+.search-div{
+
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 15px;
+    margin-bottom: 15px;    
+}
+
 .fas.fa-search{
 
     color: #3476e2;
-    margin-right: 10px;
-    margin-left: 5px;
-    cursor: pointer;
+    margin: auto;
+    padding-right: 10px;
+    cursor: pointer; 
 
-}
-
-.search-div{
-
-    padding: 0;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    
 }
 
 /*BOTAO DE CADASTRO*/
@@ -42,39 +72,45 @@ h1{
 
     margin-right: 10px;
     margin-left: 5px;
-    color: #83c683;
+    color: #000000;
 
 }
 
-.add-div{
+.add-div button{
+    background-color: #83c683;
+    color: #000000;
+}
 
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 10px;
-    border:solid;
-    border-width: 1px;
-    border-color:#83c683;;
-    margin-right: 25px;
+.list-btn-div button{
+    background-color: #3476e2;
+    color: #000000;
+
+}
+
+.fas.fa-user{
+    margin-right: 10px;
+    margin-left: 5px;
 
 }
 
 /*LISTA*/
 
-.lista-div{
+.list-div{
 
+    padding-top: 30px;
     max-width: 1128px;
     margin: auto auto;
 
 }
 
-.lista-pessoas{
+.list-pessoas{
 
     padding-left: 0;
     margin-left: 5px;
   
 }
 
-.lista-pessoas-item{
+.list-pessoas-item{
 
     padding-left: 10px;
     padding-top: 15px;
@@ -85,6 +121,7 @@ h1{
     word-wrap:break-word;
    
 }
+
 
 /*EDIÇÃO E DELEÇÃO*/
 
@@ -104,6 +141,11 @@ h1{
 }
 
 /*MENSAGENS*/
+
+div.messages{
+
+    text-align: center;
+}
 
 ul.messages{
 

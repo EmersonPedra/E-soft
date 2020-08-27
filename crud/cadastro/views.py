@@ -26,6 +26,7 @@ def createPessoa(request):
     # Essa parte pega os dados fornecidos pela api e divide em nome e sobrenome
     nome = get_random_name()
     primeiro_nome = nome[0]
+    sobrenome = ""
     sobrenome = '_'.join(nome[1::])
     
            

@@ -1,8 +1,8 @@
 $(document).ready(function(){
     var deleteBtn = $('.delete-btn');
-    var searchBtn = $('#search-btn')
-    var searchform = $('#search-form')
-    
+    var searchBtn = $('#search-btn');
+    var searchform = $('#search-form');
+   
 
     $(deleteBtn).on('click', function(e){
         //Faz com que a tag a nao seja interpretada imediatamente como ancora,
@@ -15,8 +15,10 @@ $(document).ready(function(){
             window.location.href = delLink;
         }
     })
+    $(searchBtn).on('click',function(){
+        searchform.submit();
+    });
+    
 }
 );
-$(searchBtn).on('click',function(){
-    searchform.submit();
-});
+
