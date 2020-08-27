@@ -1,0 +1,148 @@
+
+.container-fluid {
+
+    padding: 0;
+}
+
+a{
+
+    text-decoration: none;
+
+}
+
+h1{
+    color: #3476e2;
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+/*BARRA DE PESQUISA*/
+
+.fas.fa-search{
+
+    color: #3476e2;
+    margin-right: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+
+}
+
+.search-div{
+
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+
+/*BOTAO DE CADASTRO*/
+
+.fas.fa-plus{
+
+    margin-right: 10px;
+    margin-left: 5px;
+    color: #83c683;
+
+}
+
+.add-div{
+
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+    border:solid;
+    border-width: 1px;
+    border-color:#83c683;;
+    margin-right: 25px;
+
+}
+
+/*LISTA*/
+
+.lista-div{
+
+    max-width: 1128px;
+    margin: auto auto;
+
+}
+
+.lista-pessoas{
+
+    padding-left: 0;
+    margin-left: 5px;
+  
+}
+
+.lista-pessoas-item{
+
+    padding-left: 10px;
+    padding-top: 15px;
+    font-size:20px;
+    list-style: none;
+    height: 50px;
+    margin: 0 auto;
+    word-wrap:break-word;
+   
+}
+
+/*EDIÇÃO E DELEÇÃO*/
+
+.fas.fa-pencil-alt, .fas.fa-trash{
+
+    cursor: pointer;
+    margin: 10px;
+    font-size: 20px;
+    float:right;
+
+}
+
+.fas.fa-trash{
+
+    color: #d72839;
+
+}
+
+/*MENSAGENS*/
+
+ul.messages{
+
+    padding: 0;
+
+}
+
+ul.messages li {
+
+    list-style: none;
+    color: #83c683;
+
+}
+
+/*PAGINAÇÃO*/
+
+.pagination{
+
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+.step-links{
+
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.step-links .current{
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.form-control{
+
+    margin-bottom: 10px;
+
+}

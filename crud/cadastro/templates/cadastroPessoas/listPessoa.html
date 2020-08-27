@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %} Lista de Pessoas Cadastradas {% endblock %}
+{% block content %}
+
+<div class="offset=1 col=10 lista-div">
+
+    <a href="/listPessoa"><h1>Lista de Pessoas</h1></a>
+    
+    <div class="col=2 search-div">
+        
+        <form class="input-group" method="GET" id="search-form">
+            <i class="fas fa-search" id="search-btn"></i>
+            <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da pessoa" value="{{ request.GET.search}}">
+        </form>
+  
+        <a href="./" name="cadastrar"><i class="fas fa-plus"></i> Cadastrar </a>
+    
+    </div>
+    <!--Toda vez que o usuario alterar o banco de dados ele será informado atraves de mensagens-->
+    <!--Essa parte do codigo irá verificar se existem mensagens que devem aparecer para o usuario-->
+    {% if messages %}
+        <ul class="messages">
+            <!--Caso existam mensagens este for irá percorrer as mensagens e exibir na tela-->
+            {% for message in messages %}
+            <li {% if  mesage.tags  %}class="alert alert-{{message.tags}}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    
+    {% endif %}
+    
+    <div class="lista-div">
+        <table>
+
+            <tr class="lista-pessoas">
+                <td class="lista-pessoas-item">Nome</td class="lista-pessoas-item">
+                <td class="lista-pessoas-item">sobrenome</td class="lista-pessoas-item">
+                <td class="lista-pessoas-item">idade</td class="lista-pessoas-item">
+                <td class="lista-pessoas-item">nascimento</td class="lista-pessoas-item">
+                <td class="lista-pessoas-item">email</td class="lista-pessoas-item">
+                <td class="lista-pessoas-item">apelido</td class="lista-pessoas-item">
+                <td class="lista-pessoas-item">descrição</td>
+            </tr>
+
+            <tr class="lista-pessoas">
+                <!--Percorre os dados presentes em pessoas e adiciona na tabela-->
+                
+                {% for pessoa in pessoas %}                
+                    <td class="lista-pessoas-item">{{pessoa.nome}}</td class="lista-pessoas-item">
+                    <td class="lista-pessoas-item">{{pessoa.sobrenome}}</td class="lista-pessoas-item">
+                    <td class="lista-pessoas-item">{{pessoa.idade}}</td class="lista-pessoas-item">
+                    <td class="lista-pessoas-item">{{pessoa.nascimento}}</td class="lista-pessoas-item">
+                    <td class="lista-pessoas-item">{{pessoa.email}}</td class="lista-pessoas-item">
+                    <td class="lista-pessoas-item">{{pessoa.apelido}}</td class="lista-pessoas-item">
+                    <td class="lista-pessoas-item">{{pessoa.observacao}}</td class="lista-pessoas-item">
+
+                    <td>
+                        <a href="./deletePessoa/{{pessoa.id}}" class="delete-btn"><i class="fas fa-trash"></i></a>
+                        <a href="./updatePessoa/{{pessoa.id}}"><i class="fas fa-pencil-alt"></i></a>
+                    </td>
+
+            </tr>
+                {% endfor %}
+            
+        </table>
+
+    </div>    
+    <div class="pagination">
+        
+        <span class="step-links">
+        
+            {% if pessoas.has_previous %}
+                <a href="?page={{pessoas.previous_page_number}}"><i class="fas fa-arrow-left"></i></a>
+            {% endif %}
+
+            {% if pessoas.paginator.num_pages %}
+                <span class="current">
+                    {{ pessoas.number}} de {{pessoas.paginator.num_pages}}
+                </span>
+            {% endif %}
+
+            {% if pessoas.has_next %}
+                <a href="?page={{pessoas.next_page_number}}"><i class="fas fa-arrow-right"></i></a>
+            {% endif %}
+        </span>
+
+    </div>
+    
+
+</div>
+{% endblock %}
