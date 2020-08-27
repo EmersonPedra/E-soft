@@ -26,7 +26,12 @@ def createPessoa(request):
     # Essa parte pega os dados fornecidos pela api e divide em nome e sobrenome
     nome = get_random_name()
     primeiro_nome = nome[0]
-    sobrenome = '_'.join(nome[1::])
+    sobrenome = '_'.join(nome[1::]) 
+    # O caractere '_' está sendo utilizado para separar as palavras
+    # pois quando a string está sendo enviada para o input este está fazendo com que 
+    # os espaços em branco sejam considerados como fim do 'value' e a proxima palavra
+    # está sendo tratada como o nome de um outro atributo
+    # ainda estou trabalhando neste problema                                    
     
            
     if  request.method == "POST":
